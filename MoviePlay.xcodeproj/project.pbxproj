@@ -9,21 +9,53 @@
 /* Begin PBXBuildFile section */
 		DEC67D4B299BDD900066FC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D4A299BDD900066FC44 /* AppDelegate.swift */; };
 		DEC67D4D299BDD900066FC44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D4C299BDD900066FC44 /* SceneDelegate.swift */; };
-		DEC67D4F299BDD900066FC44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D4E299BDD900066FC44 /* ViewController.swift */; };
 		DEC67D52299BDD900066FC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC67D50299BDD900066FC44 /* Main.storyboard */; };
 		DEC67D54299BDD920066FC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC67D53299BDD920066FC44 /* Assets.xcassets */; };
 		DEC67D57299BDD920066FC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC67D55299BDD920066FC44 /* LaunchScreen.storyboard */; };
+		DEC67D68299BE4C80066FC44 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D67299BE4C80066FC44 /* SearchResultsViewController.swift */; };
+		DEC67D6A299BE5910066FC44 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D69299BE5910066FC44 /* DetailsViewController.swift */; };
+		DEC67D6C299BE5BF0066FC44 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D6B299BE5BF0066FC44 /* MainTabBarViewController.swift */; };
+		DEC67D6E299BE5D50066FC44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D6D299BE5D50066FC44 /* HomeViewController.swift */; };
+		DEC67D70299BE5E50066FC44 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D6F299BE5E50066FC44 /* UpcomingViewController.swift */; };
+		DEC67D72299BE5F10066FC44 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D71299BE5F10066FC44 /* SearchViewController.swift */; };
+		DEC67D74299BE5FF0066FC44 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D73299BE5FF0066FC44 /* DownloadsViewController.swift */; };
+		DEC67D76299BE62A0066FC44 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D75299BE62A0066FC44 /* Title.swift */; };
+		DEC67D78299BE64B0066FC44 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D77299BE64B0066FC44 /* YoutubeSearchResponse.swift */; };
+		DEC67D7A299BE6600066FC44 /* TrendingTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D79299BE6600066FC44 /* TrendingTitleResponse.swift */; };
+		DEC67D7C299BE67A0066FC44 /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D7B299BE67A0066FC44 /* String + Extensions.swift */; };
+		DEC67D7E299BE6AB0066FC44 /* UIImage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D7D299BE6AB0066FC44 /* UIImage + Extensions.swift */; };
+		DEC67D81299BE6E30066FC44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D80299BE6E30066FC44 /* Constants.swift */; };
+		DEC67D83299BE7BE0066FC44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D82299BE7BE0066FC44 /* LoginViewController.swift */; };
+		DEC67D86299BE8DD0066FC44 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DEC67D85299BE8DD0066FC44 /* RxCocoa */; };
+		DEC67D88299BE8DD0066FC44 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = DEC67D87299BE8DD0066FC44 /* RxRelay */; };
+		DEC67D8A299BE8DE0066FC44 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DEC67D89299BE8DE0066FC44 /* RxSwift */; };
+		DEC67D8D299BE8F00066FC44 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DEC67D8C299BE8F00066FC44 /* SDWebImage */; };
+		DEC67D90299BE9160066FC44 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DEC67D8F299BE9160066FC44 /* Realm */; };
+		DEC67D92299BE9170066FC44 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DEC67D91299BE9170066FC44 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DEC67D47299BDD900066FC44 /* MoviePlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviePlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC67D4A299BDD900066FC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC67D4C299BDD900066FC44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DEC67D4E299BDD900066FC44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DEC67D51299BDD900066FC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEC67D53299BDD920066FC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC67D56299BDD920066FC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC67D58299BDD920066FC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEC67D67299BE4C80066FC44 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		DEC67D69299BE5910066FC44 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		DEC67D6B299BE5BF0066FC44 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		DEC67D6D299BE5D50066FC44 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DEC67D6F299BE5E50066FC44 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		DEC67D71299BE5F10066FC44 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DEC67D73299BE5FF0066FC44 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		DEC67D75299BE62A0066FC44 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		DEC67D77299BE64B0066FC44 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
+		DEC67D79299BE6600066FC44 /* TrendingTitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTitleResponse.swift; sourceTree = "<group>"; };
+		DEC67D7B299BE67A0066FC44 /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
+		DEC67D7D299BE6AB0066FC44 /* UIImage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extensions.swift"; sourceTree = "<group>"; };
+		DEC67D80299BE6E30066FC44 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DEC67D82299BE7BE0066FC44 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC67D92299BE9170066FC44 /* RealmSwift in Frameworks */,
+				DEC67D8A299BE8DE0066FC44 /* RxSwift in Frameworks */,
+				DEC67D88299BE8DD0066FC44 /* RxRelay in Frameworks */,
+				DEC67D8D299BE8F00066FC44 /* SDWebImage in Frameworks */,
+				DEC67D86299BE8DD0066FC44 /* RxCocoa in Frameworks */,
+				DEC67D90299BE9160066FC44 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +94,108 @@
 		DEC67D49299BDD900066FC44 /* MoviePlay */ = {
 			isa = PBXGroup;
 			children = (
-				DEC67D4A299BDD900066FC44 /* AppDelegate.swift */,
-				DEC67D4C299BDD900066FC44 /* SceneDelegate.swift */,
-				DEC67D4E299BDD900066FC44 /* ViewController.swift */,
-				DEC67D50299BDD900066FC44 /* Main.storyboard */,
-				DEC67D53299BDD920066FC44 /* Assets.xcassets */,
-				DEC67D55299BDD920066FC44 /* LaunchScreen.storyboard */,
+				DEC67D7F299BE6D50066FC44 /* Helpers */,
+				DEC67D64299BDE470066FC44 /* Resources */,
+				DEC67D63299BDE410066FC44 /* Extensions */,
+				DEC67D62299BDE390066FC44 /* Managers */,
+				DEC67D5E299BDDF60066FC44 /* Models */,
+				DEC67D5F299BDDFD0066FC44 /* Views */,
+				DEC67D60299BDE090066FC44 /* ViewModels */,
+				DEC67D61299BDE200066FC44 /* Controllers */,
 				DEC67D58299BDD920066FC44 /* Info.plist */,
 			);
 			path = MoviePlay;
+			sourceTree = "<group>";
+		};
+		DEC67D5E299BDDF60066FC44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEC67D75299BE62A0066FC44 /* Title.swift */,
+				DEC67D77299BE64B0066FC44 /* YoutubeSearchResponse.swift */,
+				DEC67D79299BE6600066FC44 /* TrendingTitleResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DEC67D5F299BDDFD0066FC44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC67D50299BDD900066FC44 /* Main.storyboard */,
+				DEC67D55299BDD920066FC44 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC67D60299BDE090066FC44 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DEC67D61299BDE200066FC44 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DEC67D66299BE4A50066FC44 /* Generals */,
+				DEC67D65299BE49D0066FC44 /* Core */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DEC67D62299BDE390066FC44 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DEC67D63299BDE410066FC44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DEC67D7B299BE67A0066FC44 /* String + Extensions.swift */,
+				DEC67D7D299BE6AB0066FC44 /* UIImage + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DEC67D64299BDE470066FC44 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEC67D4C299BDD900066FC44 /* SceneDelegate.swift */,
+				DEC67D4A299BDD900066FC44 /* AppDelegate.swift */,
+				DEC67D53299BDD920066FC44 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DEC67D65299BE49D0066FC44 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DEC67D82299BE7BE0066FC44 /* LoginViewController.swift */,
+				DEC67D6B299BE5BF0066FC44 /* MainTabBarViewController.swift */,
+				DEC67D6D299BE5D50066FC44 /* HomeViewController.swift */,
+				DEC67D6F299BE5E50066FC44 /* UpcomingViewController.swift */,
+				DEC67D71299BE5F10066FC44 /* SearchViewController.swift */,
+				DEC67D73299BE5FF0066FC44 /* DownloadsViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DEC67D66299BE4A50066FC44 /* Generals */ = {
+			isa = PBXGroup;
+			children = (
+				DEC67D67299BE4C80066FC44 /* SearchResultsViewController.swift */,
+				DEC67D69299BE5910066FC44 /* DetailsViewController.swift */,
+			);
+			path = Generals;
+			sourceTree = "<group>";
+		};
+		DEC67D7F299BE6D50066FC44 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DEC67D80299BE6E30066FC44 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +214,14 @@
 			dependencies = (
 			);
 			name = MoviePlay;
+			packageProductDependencies = (
+				DEC67D85299BE8DD0066FC44 /* RxCocoa */,
+				DEC67D87299BE8DD0066FC44 /* RxRelay */,
+				DEC67D89299BE8DE0066FC44 /* RxSwift */,
+				DEC67D8C299BE8F00066FC44 /* SDWebImage */,
+				DEC67D8F299BE9160066FC44 /* Realm */,
+				DEC67D91299BE9170066FC44 /* RealmSwift */,
+			);
 			productName = MoviePlay;
 			productReference = DEC67D47299BDD900066FC44 /* MoviePlay.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +250,11 @@
 				Base,
 			);
 			mainGroup = DEC67D3E299BDD900066FC44;
+			packageReferences = (
+				DEC67D84299BE8DD0066FC44 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				DEC67D8B299BE8F00066FC44 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				DEC67D8E299BE9160066FC44 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = DEC67D48299BDD900066FC44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +282,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEC67D4F299BDD900066FC44 /* ViewController.swift in Sources */,
+				DEC67D76299BE62A0066FC44 /* Title.swift in Sources */,
+				DEC67D6C299BE5BF0066FC44 /* MainTabBarViewController.swift in Sources */,
 				DEC67D4B299BDD900066FC44 /* AppDelegate.swift in Sources */,
+				DEC67D72299BE5F10066FC44 /* SearchViewController.swift in Sources */,
+				DEC67D68299BE4C80066FC44 /* SearchResultsViewController.swift in Sources */,
+				DEC67D81299BE6E30066FC44 /* Constants.swift in Sources */,
+				DEC67D7C299BE67A0066FC44 /* String + Extensions.swift in Sources */,
 				DEC67D4D299BDD900066FC44 /* SceneDelegate.swift in Sources */,
+				DEC67D7A299BE6600066FC44 /* TrendingTitleResponse.swift in Sources */,
+				DEC67D74299BE5FF0066FC44 /* DownloadsViewController.swift in Sources */,
+				DEC67D6A299BE5910066FC44 /* DetailsViewController.swift in Sources */,
+				DEC67D70299BE5E50066FC44 /* UpcomingViewController.swift in Sources */,
+				DEC67D83299BE7BE0066FC44 /* LoginViewController.swift in Sources */,
+				DEC67D78299BE64B0066FC44 /* YoutubeSearchResponse.swift in Sources */,
+				DEC67D6E299BE5D50066FC44 /* HomeViewController.swift in Sources */,
+				DEC67D7E299BE6AB0066FC44 /* UIImage + Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +515,66 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEC67D84299BE8DD0066FC44 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		DEC67D8B299BE8F00066FC44 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DEC67D8E299BE9160066FC44 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEC67D85299BE8DD0066FC44 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC67D84299BE8DD0066FC44 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		DEC67D87299BE8DD0066FC44 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC67D84299BE8DD0066FC44 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		DEC67D89299BE8DE0066FC44 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC67D84299BE8DD0066FC44 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		DEC67D8C299BE8F00066FC44 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC67D8B299BE8F00066FC44 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		DEC67D8F299BE9160066FC44 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC67D8E299BE9160066FC44 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		DEC67D91299BE9170066FC44 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEC67D8E299BE9160066FC44 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DEC67D3F299BDD900066FC44 /* Project object */;
 }
