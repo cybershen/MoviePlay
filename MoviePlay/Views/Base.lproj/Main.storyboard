@@ -1,24 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QL5-Gf-BxU">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="MoviePlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="kcp-AE-rjN">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="581"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wW-P8-SKQ">
+                                <rect key="frame" x="53" y="383" width="69" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="BxJ-be-UpD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free-icon-video-camera-1114999" translatesAutoresizingMaskIntoConstraints="NO" id="Ha3-U2-yNM">
+                                <rect key="frame" x="130" y="204" width="133" height="115"/>
+                            </imageView>
+                            <textField opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pok-b2-ufe">
+                                <rect key="frame" x="53" y="374" width="286" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt9-Ru-wfo">
+                                <rect key="frame" x="53" y="460" width="88" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="z83-oH-Iih"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SFQ-i8-rHU">
+                                <rect key="frame" x="53" y="451" width="286" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xb-wJ-xP6">
+                                <rect key="frame" x="112" y="732.66666666666663" width="187" height="19.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.28448548969999998" green="0.28448548969999998" blue="0.28448548969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBE-2u-2Ao">
+                                <rect key="frame" x="147" y="760" width="116" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="zCy-fI-ECe"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Register">
+                                    <fontDescription key="titleFontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="18"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-N2-zsl">
+                                <rect key="frame" x="53" y="510" width="286" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="QXY-B9-oWn"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.96841138601303101" green="0.7062561164372636" blue="0.24236221185075241" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5LL-Ar-iwe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MoviePlay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w0-Sx-YeP">
+                                <rect key="frame" x="121" y="289" width="150.00000000000003" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="1P1-Dy-FT7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="27"/>
+                                <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kcp-AE-rjN" secondAttribute="trailing" id="1GW-ZO-Uqj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5xb-wJ-xP6" secondAttribute="trailing" constant="94" id="23R-c9-bhE"/>
+                            <constraint firstItem="Pok-b2-ufe" firstAttribute="leading" secondItem="rt9-Ru-wfo" secondAttribute="leading" id="3Uk-am-r4L"/>
+                            <constraint firstItem="Ha3-U2-yNM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="4bW-JM-EWd"/>
+                            <constraint firstItem="kcp-AE-rjN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BvM-Ii-u2D"/>
+                            <constraint firstItem="7wW-P8-SKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="280" id="CrT-hl-hyb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7wW-P8-SKQ" secondAttribute="trailing" constant="271" id="Dl5-mK-NhL"/>
+                            <constraint firstItem="Ha3-U2-yNM" firstAttribute="centerX" secondItem="8w0-Sx-YeP" secondAttribute="centerX" id="EV1-Qi-GT3"/>
+                            <constraint firstItem="SFQ-i8-rHU" firstAttribute="trailing" secondItem="vrF-N2-zsl" secondAttribute="trailing" id="IT2-s6-4Qn"/>
+                            <constraint firstItem="Ha3-U2-yNM" firstAttribute="trailing" secondItem="BBE-2u-2Ao" secondAttribute="trailing" id="ORM-f7-cXg"/>
+                            <constraint firstItem="SFQ-i8-rHU" firstAttribute="leading" secondItem="vrF-N2-zsl" secondAttribute="leading" id="Sq7-kO-fro"/>
+                            <constraint firstItem="kcp-AE-rjN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TNg-by-zal"/>
+                            <constraint firstItem="rt9-Ru-wfo" firstAttribute="leading" secondItem="SFQ-i8-rHU" secondAttribute="leading" id="UTn-J9-Cw2"/>
+                            <constraint firstItem="8w0-Sx-YeP" firstAttribute="centerX" secondItem="Pok-b2-ufe" secondAttribute="centerX" id="Z1R-gV-m0a"/>
+                            <constraint firstItem="Pok-b2-ufe" firstAttribute="top" secondItem="8w0-Sx-YeP" secondAttribute="bottom" constant="58" id="bH8-WW-HtG"/>
+                            <constraint firstItem="vrF-N2-zsl" firstAttribute="top" secondItem="SFQ-i8-rHU" secondAttribute="bottom" constant="25" id="cE4-7E-9P4"/>
+                            <constraint firstItem="8w0-Sx-YeP" firstAttribute="top" secondItem="Ha3-U2-yNM" secondAttribute="bottom" constant="14" id="cN7-Zp-E4G"/>
+                            <constraint firstItem="Pok-b2-ufe" firstAttribute="trailing" secondItem="SFQ-i8-rHU" secondAttribute="trailing" id="dBG-fE-8FT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBE-2u-2Ao" secondAttribute="bottom" constant="23" id="dD7-ad-vcY"/>
+                            <constraint firstItem="BBE-2u-2Ao" firstAttribute="top" secondItem="5xb-wJ-xP6" secondAttribute="bottom" constant="8.0000000000001137" id="evm-9i-5tr"/>
+                            <constraint firstItem="SFQ-i8-rHU" firstAttribute="top" secondItem="rt9-Ru-wfo" secondAttribute="bottom" constant="8" symbolic="YES" id="fQz-q2-V68"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rt9-Ru-wfo" secondAttribute="trailing" constant="252" id="iKS-Dx-GTr"/>
+                            <constraint firstItem="5xb-wJ-xP6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="m9c-5K-LmT"/>
+                            <constraint firstItem="Ha3-U2-yNM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="n64-aW-OZz"/>
+                            <constraint firstItem="5xb-wJ-xP6" firstAttribute="centerX" secondItem="BBE-2u-2Ao" secondAttribute="centerX" id="pYp-Pr-1YP"/>
+                            <constraint firstItem="Pok-b2-ufe" firstAttribute="top" secondItem="7wW-P8-SKQ" secondAttribute="bottom" constant="8" symbolic="YES" id="r89-kj-8CJ"/>
+                            <constraint firstItem="rt9-Ru-wfo" firstAttribute="top" secondItem="Pok-b2-ufe" secondAttribute="bottom" constant="8" symbolic="YES" id="tIA-J8-Sqw"/>
+                            <constraint firstItem="kcp-AE-rjN" firstAttribute="centerX" secondItem="SFQ-i8-rHU" secondAttribute="centerX" id="v0T-BI-mUm"/>
+                            <constraint firstItem="8w0-Sx-YeP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120.99999999999999" id="vqK-bx-chk"/>
+                            <constraint firstItem="7wW-P8-SKQ" firstAttribute="leading" secondItem="Pok-b2-ufe" secondAttribute="leading" id="vwn-qb-qh4"/>
+                            <constraint firstItem="7wW-P8-SKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="xbc-He-WGn"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Soe-u3-9Su"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1807" y="-2"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="K9R-g2-9kl">
+            <objects>
+                <viewController id="YDl-SU-zeS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tib-OS-jzS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="l60-4B-p14"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="brain.head.profile" catalog="system" id="cbr-ze-yjG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUz-oK-5jq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856" y="1056"/>
+        </scene>
+        <!--Downloads-->
+        <scene sceneID="tcs-ok-ILd">
+            <objects>
+                <viewController id="YOL-cf-Z7v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YIc-Ey-lV2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qGy-Ek-NFN"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Downloads" image="arrow.down.to.line.alt" catalog="system" id="b1a-yF-LQ8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Bp-un-Iqg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3709.1603053435115" y="403.52112676056339"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="yeM-LW-0ps">
+            <objects>
+                <viewController id="cEQ-cv-2Pn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Sq-bB-3A9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="UsH-oY-Qkw"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="bt1-KH-wKs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q37-kp-Tnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3709.1603053435115" y="-249.29577464788733"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="DJY-OS-u3z">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="zj9-PC-78g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gvo-63-nLd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ooI-t9-QTz"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="fyZ-61-qqm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-UT-sJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856" y="-907"/>
+        </scene>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="ttV-jq-gXe">
+            <objects>
+                <tabBarController restorationIdentifier="MainTabBarController" storyboardIdentifier="MainTabBarController" id="ior-Zb-P2l" customClass="MainTabBarViewController" customModule="MoviePlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dj1-h7-bs6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zj9-PC-78g" kind="relationship" relationship="viewControllers" id="azH-4r-zkP"/>
+                        <segue destination="cEQ-cv-2Pn" kind="relationship" relationship="viewControllers" id="MsT-eS-uP7"/>
+                        <segue destination="YOL-cf-Z7v" kind="relationship" relationship="viewControllers" id="n1i-8X-Gk8"/>
+                        <segue destination="YDl-SU-zeS" kind="relationship" relationship="viewControllers" id="LjZ-WE-FTJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mDH-Ba-c7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2958.0152671755723" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aC6-US-AgQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QL5-Gf-BxU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iby-WO-rhO">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gjS-v5-57h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7jz-ht-8Yj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040.4580152671756" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image 1" width="871" height="581"/>
+        <image name="arrow.down.to.line.alt" catalog="system" width="128" height="128"/>
+        <image name="brain.head.profile" catalog="system" width="120" height="128"/>
+        <image name="free-icon-video-camera-1114999" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+    </resources>
 </document>
