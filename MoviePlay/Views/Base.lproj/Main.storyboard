@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -196,42 +195,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBg-b4-LN6">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="525"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Obb-84-kbW">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="525"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="Obb-84-kbW" firstAttribute="top" secondItem="yBg-b4-LN6" secondAttribute="top" id="6vJ-Dg-jPV"/>
-                                    <constraint firstItem="Obb-84-kbW" firstAttribute="leading" secondItem="yBg-b4-LN6" secondAttribute="leading" id="G2d-mY-DZt"/>
-                                    <constraint firstAttribute="bottom" secondItem="Obb-84-kbW" secondAttribute="bottom" id="Gcx-Rw-hfw"/>
-                                    <constraint firstAttribute="trailing" secondItem="Obb-84-kbW" secondAttribute="trailing" id="lO7-rt-T5C"/>
-                                    <constraint firstAttribute="height" constant="525" id="vIG-uH-B3w"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AI8-zH-vqj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AI8-zH-vqj">
                                 <rect key="frame" x="0.0" y="524" width="393" height="245"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zj9-PC-78g" id="hh1-Lo-muB"/>
+                                    <outlet property="delegate" destination="zj9-PC-78g" id="RjJ-PP-FWF"/>
+                                </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Obb-84-kbW">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="525"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ooI-t9-QTz"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yBg-b4-LN6" firstAttribute="top" secondItem="gvo-63-nLd" secondAttribute="top" id="1d2-R3-2p8"/>
-                            <constraint firstItem="yBg-b4-LN6" firstAttribute="trailing" secondItem="ooI-t9-QTz" secondAttribute="trailing" id="6wx-sh-Xhm"/>
-                            <constraint firstItem="AI8-zH-vqj" firstAttribute="leading" secondItem="ooI-t9-QTz" secondAttribute="leading" id="GCi-nF-EDl"/>
-                            <constraint firstItem="AI8-zH-vqj" firstAttribute="top" secondItem="yBg-b4-LN6" secondAttribute="bottom" constant="-1" id="dKC-p8-xd3"/>
-                            <constraint firstItem="yBg-b4-LN6" firstAttribute="leading" secondItem="ooI-t9-QTz" secondAttribute="leading" id="if5-WE-91d"/>
-                            <constraint firstItem="AI8-zH-vqj" firstAttribute="trailing" secondItem="ooI-t9-QTz" secondAttribute="trailing" id="iif-F9-nNH"/>
-                            <constraint firstItem="AI8-zH-vqj" firstAttribute="bottom" secondItem="ooI-t9-QTz" secondAttribute="bottom" id="tWN-ZT-H6g"/>
+                            <constraint firstItem="AI8-zH-vqj" firstAttribute="leading" secondItem="ooI-t9-QTz" secondAttribute="leading" id="6td-Sd-4mp"/>
+                            <constraint firstItem="Obb-84-kbW" firstAttribute="trailing" secondItem="AI8-zH-vqj" secondAttribute="trailing" id="Tlw-wZ-cCY"/>
+                            <constraint firstItem="ooI-t9-QTz" firstAttribute="bottom" secondItem="Obb-84-kbW" secondAttribute="bottom" constant="244" id="h1s-Mx-rtb"/>
+                            <constraint firstItem="Obb-84-kbW" firstAttribute="top" secondItem="gvo-63-nLd" secondAttribute="topMargin" constant="-59" id="kGk-eh-LV7"/>
+                            <constraint firstItem="Obb-84-kbW" firstAttribute="centerX" secondItem="gvo-63-nLd" secondAttribute="centerX" id="sz0-Ne-Zee"/>
+                            <constraint firstItem="AI8-zH-vqj" firstAttribute="top" secondItem="ooI-t9-QTz" secondAttribute="top" constant="465" id="tic-JL-1ql"/>
+                            <constraint firstItem="Obb-84-kbW" firstAttribute="leading" secondItem="AI8-zH-vqj" secondAttribute="leading" id="xV5-JP-QML"/>
+                            <constraint firstItem="AI8-zH-vqj" firstAttribute="bottom" secondItem="ooI-t9-QTz" secondAttribute="bottom" id="xp6-AI-abO"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="fyZ-61-qqm"/>
                     <connections>
-                        <outlet property="heroHeaderView" destination="yBg-b4-LN6" id="9ai-WM-FdZ"/>
                         <outlet property="heroImageView" destination="Obb-84-kbW" id="x5G-OY-iRz"/>
                         <outlet property="tableView" destination="AI8-zH-vqj" id="7VL-gP-FWv"/>
                     </connections>
@@ -286,8 +276,5 @@
         <image name="free-icon-video-camera-1114999" width="170.66667175292969" height="170.66667175292969"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
