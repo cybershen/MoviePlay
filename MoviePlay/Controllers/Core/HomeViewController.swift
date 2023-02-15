@@ -9,21 +9,23 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var heroHeaderView: UIView!
+    @IBOutlet weak var heroImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let sectionTitles = ["Trending Movies", "Trending TV", "Popular", "Upcoming Movies", "Top Rated"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        heroImageView.image = UIImage(named: "poster.jpg")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func addGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor.clear.cgColor,
+            UIColor.systemBackground.cgColor]
+        gradientLayer.frame = heroHeaderView.bounds
+        heroHeaderView.layer.addSublayer(gradientLayer)
     }
-    */
-
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE38B034299CD11E00A013CA /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38B033299CD11E00A013CA /* TitleViewModel.swift */; };
+		DE38B036299CD12900A013CA /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38B035299CD12900A013CA /* TitlePreviewViewModel.swift */; };
+		DE38B038299CD23600A013CA /* URLRequest + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38B037299CD23600A013CA /* URLRequest + Extentions.swift */; };
+		DE38B03A299CD87B00A013CA /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38B039299CD87B00A013CA /* CollectionTableViewCell.swift */; };
 		DEC67D4B299BDD900066FC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D4A299BDD900066FC44 /* AppDelegate.swift */; };
 		DEC67D4D299BDD900066FC44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D4C299BDD900066FC44 /* SceneDelegate.swift */; };
 		DEC67D52299BDD900066FC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC67D50299BDD900066FC44 /* Main.storyboard */; };
@@ -35,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE38B033299CD11E00A013CA /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
+		DE38B035299CD12900A013CA /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
+		DE38B037299CD23600A013CA /* URLRequest + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest + Extentions.swift"; sourceTree = "<group>"; };
+		DE38B039299CD87B00A013CA /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		DEC67D47299BDD900066FC44 /* MoviePlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviePlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC67D4A299BDD900066FC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC67D4C299BDD900066FC44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +130,7 @@
 			children = (
 				DEC67D50299BDD900066FC44 /* Main.storyboard */,
 				DEC67D55299BDD920066FC44 /* LaunchScreen.storyboard */,
+				DE38B039299CD87B00A013CA /* CollectionTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +138,8 @@
 		DEC67D60299BDE090066FC44 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DE38B033299CD11E00A013CA /* TitleViewModel.swift */,
+				DE38B035299CD12900A013CA /* TitlePreviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 			children = (
 				DEC67D7B299BE67A0066FC44 /* String + Extensions.swift */,
 				DEC67D7D299BE6AB0066FC44 /* UIImage + Extensions.swift */,
+				DE38B037299CD23600A013CA /* URLRequest + Extentions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE38B036299CD12900A013CA /* TitlePreviewViewModel.swift in Sources */,
+				DE38B038299CD23600A013CA /* URLRequest + Extentions.swift in Sources */,
 				DEC67D76299BE62A0066FC44 /* Title.swift in Sources */,
 				DEC67D6C299BE5BF0066FC44 /* MainTabBarViewController.swift in Sources */,
 				DEC67D4B299BDD900066FC44 /* AppDelegate.swift in Sources */,
@@ -291,9 +305,11 @@
 				DEC67D7C299BE67A0066FC44 /* String + Extensions.swift in Sources */,
 				DEC67D4D299BDD900066FC44 /* SceneDelegate.swift in Sources */,
 				DEC67D7A299BE6600066FC44 /* TrendingTitleResponse.swift in Sources */,
+				DE38B034299CD11E00A013CA /* TitleViewModel.swift in Sources */,
 				DEC67D74299BE5FF0066FC44 /* DownloadsViewController.swift in Sources */,
 				DEC67D6A299BE5910066FC44 /* DetailsViewController.swift in Sources */,
 				DEC67D70299BE5E50066FC44 /* UpcomingViewController.swift in Sources */,
+				DE38B03A299CD87B00A013CA /* CollectionTableViewCell.swift in Sources */,
 				DEC67D83299BE7BE0066FC44 /* LoginViewController.swift in Sources */,
 				DEC67D78299BE64B0066FC44 /* YoutubeSearchResponse.swift in Sources */,
 				DEC67D6E299BE5D50066FC44 /* HomeViewController.swift in Sources */,
