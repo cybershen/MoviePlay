@@ -1,13 +1,13 @@
 //
-//  UpcomingViewController.swift
+//  ProfileViewController.swift
 //  MoviePlay
 //
-//  Created by Назар Жиленко on 14.02.2023.
+//  Created by Назар Жиленко on 20.02.2023.
 //
 
 import UIKit
 
-class UpcomingViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

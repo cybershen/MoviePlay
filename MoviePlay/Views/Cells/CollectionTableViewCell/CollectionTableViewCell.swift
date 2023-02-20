@@ -2,27 +2,25 @@
 //  CollectionTableViewCell.swift
 //  MoviePlay
 //
-//  Created by Назар Жиленко on 15.02.2023.
+//  Created by Назар Жиленко on 19.02.2023.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-class CollectionViewTableViewCell: UITableViewCell {
+class CollectionTableViewCell: UITableViewCell {
     static let identifier = "CollectionViewTableViewCell"
     
-    private var titles: [Title] = []
-    
-    let disposeBag = DisposeBag()
+    var movieListViewViewModel: MovieListViewViewModel!
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 140, height: 200)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
-        collectionView.backgroundColor = .systemBackground
+        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+        collectionView.backgroundColor = .black
         return collectionView
     }()
     
@@ -35,12 +33,8 @@ class CollectionViewTableViewCell: UITableViewCell {
         collectionView.delegate = self
     }
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("Error")
     }
     
     override func layoutSubviews() {
@@ -48,43 +42,31 @@ class CollectionViewTableViewCell: UITableViewCell {
         collectionView.frame = contentView.bounds
     }
     
-    public func configure(with titles: [Title]) {
-        self.titles = titles
+    public func configure(with viewModel: MovieListViewViewModel) {
+        self.movieListViewViewModel = viewModel
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
     }
-    
-//    private func fetchTitles() {
-//        URLRequest.load(resource: TrendingTitleResponse.trendingMovies)
-//            .subscribe(onNext: { titles in
-//
-//                self.titles = titles!.results
-//
-//                DispatchQueue.main.async {
-//                    self.collectionView.reloadData()
-//                }
-//            })
-//            .disposed(by: disposeBag)
-//    }
 }
 
-extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
         
-        guard let model = titles[indexPath.row].poster_path else {
+        guard let movie = movieListViewViewModel.viewModelForMovie(at: indexPath.row) else {
             return UICollectionViewCell()
         }
         
-        cell.configure(with: model)
+        cell.configure(viewModel: movie)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        return movieListViewViewModel.numberOfMovies
     }
 }
