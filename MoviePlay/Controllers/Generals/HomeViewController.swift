@@ -11,6 +11,7 @@ import RxCocoa
 
 enum Sections: Int {
     case trendingMovies = 0
+    case trendingTv = 1
 }
 
 class HomeViewController: UIViewController {
@@ -18,7 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    let sectionTitles = ["Trending Movies"]
+    let sectionTitles = ["Trending Movies", "Trending TV"]
     
     var movieListViewViewModel: MovieListViewViewModel!
     let disposeBag = DisposeBag()
@@ -29,8 +30,8 @@ class HomeViewController: UIViewController {
         tableView.register(CollectionTableViewCell.self, forCellReuseIdentifier: CollectionTableViewCell.identifier)
         
         movieListViewViewModel = MovieListViewViewModel(endpoint: segmentedControl.rx.selectedSegmentIndex
-            .map { Endpoint(index: $0) ?? .nowPlaying }
-            .asDriver(onErrorJustReturn: .nowPlaying)
+            .map { Endpoint(index: $0) ?? .upcoming }
+            .asDriver(onErrorJustReturn: .upcoming)
             , movieService: MovieStore.shared)
         
         movieListViewViewModel.movies.drive(onNext: {[unowned self] (_) in
