@@ -21,8 +21,6 @@ class MovieListViewViewModel {
                 print(endpoint)
                 self?.fetchMovies(endpoint: endpoint)
         }).disposed(by: disposeBag)
-        
-    
     }
     
     private let _movies = BehaviorRelay<[Movie]>(value: [])

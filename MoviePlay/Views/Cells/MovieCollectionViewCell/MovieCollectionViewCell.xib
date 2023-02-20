@@ -29,6 +29,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="238" height="203"/>
             <connections>
+                <outlet property="cellView" destination="GiO-wb-kFn" id="lBq-8k-0NW"/>
                 <outlet property="imageView" destination="C5Y-if-4Fw" id="w0p-AE-VA6"/>
             </connections>
             <point key="canvasLocation" x="377.09923664122135" y="51.056338028169016"/>

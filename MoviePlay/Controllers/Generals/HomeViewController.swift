@@ -43,7 +43,6 @@ class HomeViewController: UIViewController {
         
         movieListViewViewModel.isFetching.drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
-        
     }
 }
 
