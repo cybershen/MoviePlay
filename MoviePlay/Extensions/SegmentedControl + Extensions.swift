@@ -8,7 +8,6 @@
 import UIKit
 
 extension UISegmentedControl {
-    
     var endpoint: Endpoint {
         switch self.selectedSegmentIndex {
         case 0: return .nowPlaying

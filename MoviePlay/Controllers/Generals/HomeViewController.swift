@@ -11,10 +11,6 @@ import RxCocoa
 
 enum Sections: Int {
     case trendingMovies = 0
-    case trendingTv = 1
-    case popular = 2
-    case upcomingMovies = 3
-    case topRated = 4
 }
 
 class HomeViewController: UIViewController {
@@ -22,7 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    let sectionTitles = ["Trending Movies", "Trending TV", "Popular", "Upcoming Movies", "Top Rated"]
+    let sectionTitles = ["Trending Movies"]
     
     var movieListViewViewModel: MovieListViewViewModel!
     let disposeBag = DisposeBag()
@@ -53,15 +49,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         switch indexPath.section {
+            
         case Sections.trendingMovies.rawValue:
-            cell.configure(with: movieListViewViewModel)
-        case Sections.trendingTv.rawValue:
-            cell.configure(with: movieListViewViewModel)
-        case Sections.popular.rawValue:
-            cell.configure(with: movieListViewViewModel)
-        case Sections.upcomingMovies.rawValue:
-            cell.configure(with: movieListViewViewModel)
-        case Sections.topRated.rawValue:
             cell.configure(with: movieListViewViewModel)
             
         default:
@@ -72,7 +61,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        sectionTitles.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,7 +69,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 600
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -89,9 +78,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
-        header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20 , y: header.bounds.origin.y, width: 100, height: header.bounds.height)
-        header.textLabel?.textColor = .white
+        header.textLabel?.font = .systemFont(ofSize: 36, weight: .semibold)
+        header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20 , y: header.bounds.origin.y, width: 300, height: header.bounds.height)
+        header.textLabel?.textColor = .orange
         header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
     }
     

@@ -16,8 +16,8 @@ class CollectionTableViewCell: UITableViewCell {
         
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 180, height: 260)
-        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 600, height: 500)
+        layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
         collectionView.backgroundColor = .black

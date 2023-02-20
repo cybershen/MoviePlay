@@ -56,7 +56,6 @@ class MovieSearchViewController: UIViewController {
     private func setupNavigationBar() {
         navigationItem.searchController = UISearchController(searchResultsController: nil)
         self.definesPresentationContext = true
-        navigationItem.searchController?.dimsBackgroundDuringPresentation = false
         navigationItem.searchController?.hidesNavigationBarDuringPresentation = false
         
         navigationItem.searchController?.searchBar.sizeToFit()

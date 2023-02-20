@@ -252,10 +252,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="KfC-Hy-n12">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="h2C-6e-IRH">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="h2C-6e-IRH">
                             <rect key="frame" x="16" y="6" width="361" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="AccentColor"/>
+                            <color key="backgroundColor" red="0.96841138599999999" green="0.70625611639999997" blue="0.24236221190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <segments>
                                 <segment title="Now Playing"/>
                                 <segment title="Popular"/>
@@ -307,8 +307,8 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6ql-QH-0Td"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96841138599999999" green="0.70625611639999997" blue="0.24236221190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6ql-QH-0Td" firstAttribute="trailing" secondItem="4dd-4P-MJa" secondAttribute="trailing" id="CJc-R5-Qa2"/>
                             <constraint firstItem="hhL-cT-y4c" firstAttribute="centerX" secondItem="PS6-ad-2eT" secondAttribute="centerX" id="Dul-9m-vX9"/>
@@ -362,7 +362,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jXX-mT-Act">
-                                <rect key="frame" x="0.0" y="144" width="393" height="625"/>
+                                <rect key="frame" x="0.0" y="136" width="393" height="633"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -385,7 +385,7 @@
                         <constraints>
                             <constraint firstItem="zTd-2X-XLE" firstAttribute="trailing" secondItem="qad-6B-bWG" secondAttribute="trailing" id="0K7-AA-WyA"/>
                             <constraint firstItem="jXX-mT-Act" firstAttribute="leading" secondItem="qad-6B-bWG" secondAttribute="leading" id="2ID-U5-rRb"/>
-                            <constraint firstItem="jXX-mT-Act" firstAttribute="top" secondItem="zTd-2X-XLE" secondAttribute="bottom" constant="10" id="Djy-rQ-YxS"/>
+                            <constraint firstItem="jXX-mT-Act" firstAttribute="top" secondItem="zTd-2X-XLE" secondAttribute="bottom" constant="2" id="Djy-rQ-YxS"/>
                             <constraint firstItem="jXX-mT-Act" firstAttribute="trailing" secondItem="qad-6B-bWG" secondAttribute="trailing" id="Vfl-Rb-4y3"/>
                             <constraint firstItem="zTd-2X-XLE" firstAttribute="top" secondItem="qad-6B-bWG" secondAttribute="top" id="bbo-dV-bxk"/>
                             <constraint firstItem="zTd-2X-XLE" firstAttribute="leading" secondItem="qad-6B-bWG" secondAttribute="leading" id="oOP-2B-7Fx"/>
