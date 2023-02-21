@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    let sectionTitles = ["Trending Movies", "Trending TV"]
+    let sectionTitles = ["Home", "Trending TV"]
     
     var movieListViewViewModel: MovieListViewViewModel!
     let disposeBag = DisposeBag()

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1CA11529A4D55B0088980E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1CA11429A4D55B0088980E /* LaunchScreen.storyboard */; };
+		DE1CA11729A4D65D0088980E /* film.json in Resources */ = {isa = PBXBuildFile; fileRef = DE1CA11629A4D65D0088980E /* film.json */; };
+		DE1CA11A29A4D78F0088980E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DE1CA11929A4D78F0088980E /* Lottie */; };
 		DE74897529A2907A0092DD9E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74897429A2907A0092DD9E /* MainTabBarController.swift */; };
 		DE74897729A291630092DD9E /* SegmentedControl + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74897629A291630092DD9E /* SegmentedControl + Extensions.swift */; };
 		DE74897A29A291BD0092DD9E /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74897929A291BD0092DD9E /* MovieCell.swift */; };
@@ -28,7 +31,6 @@
 		DEC67D4B299BDD900066FC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D4A299BDD900066FC44 /* AppDelegate.swift */; };
 		DEC67D4D299BDD900066FC44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D4C299BDD900066FC44 /* SceneDelegate.swift */; };
 		DEC67D54299BDD920066FC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC67D53299BDD920066FC44 /* Assets.xcassets */; };
-		DEC67D57299BDD920066FC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC67D55299BDD920066FC44 /* LaunchScreen.storyboard */; };
 		DEC67D7C299BE67A0066FC44 /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D7B299BE67A0066FC44 /* String + Extensions.swift */; };
 		DEC67D81299BE6E30066FC44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D80299BE6E30066FC44 /* Constants.swift */; };
 		DEC67D83299BE7BE0066FC44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC67D82299BE7BE0066FC44 /* LoginViewController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE1CA11429A4D55B0088980E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE1CA11629A4D65D0088980E /* film.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = film.json; sourceTree = "<group>"; };
 		DE74897429A2907A0092DD9E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DE74897629A291630092DD9E /* SegmentedControl + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extensions.swift"; sourceTree = "<group>"; };
 		DE74897929A291BD0092DD9E /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -64,7 +68,6 @@
 		DEC67D4A299BDD900066FC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC67D4C299BDD900066FC44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DEC67D53299BDD920066FC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DEC67D56299BDD920066FC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC67D58299BDD920066FC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEC67D7B299BE67A0066FC44 /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
 		DEC67D80299BE6E30066FC44 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC67D92299BE9170066FC44 /* RealmSwift in Frameworks */,
+				DE1CA11A29A4D78F0088980E /* Lottie in Frameworks */,
 				DEC67D8A299BE8DE0066FC44 /* RxSwift in Frameworks */,
 				DEC67D88299BE8DD0066FC44 /* RxRelay in Frameworks */,
 				DEC67D8D299BE8F00066FC44 /* SDWebImage in Frameworks */,
@@ -161,6 +165,7 @@
 				DEC67D5F299BDDFD0066FC44 /* Views */,
 				DEC67D60299BDE090066FC44 /* ViewModels */,
 				DEC67D61299BDE200066FC44 /* Controllers */,
+				DE1CA11629A4D65D0088980E /* film.json */,
 				DEC67D58299BDD920066FC44 /* Info.plist */,
 			);
 			path = MoviePlay;
@@ -178,8 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				DE74897829A291730092DD9E /* Cells */,
-				DEC67D55299BDD920066FC44 /* LaunchScreen.storyboard */,
 				DE79382D29A3D8F300CAB63C /* Main.storyboard */,
+				DE1CA11429A4D55B0088980E /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				DEC67D8C299BE8F00066FC44 /* SDWebImage */,
 				DEC67D8F299BE9160066FC44 /* Realm */,
 				DEC67D91299BE9170066FC44 /* RealmSwift */,
+				DE1CA11929A4D78F0088980E /* Lottie */,
 			);
 			productName = MoviePlay;
 			productReference = DEC67D47299BDD900066FC44 /* MoviePlay.app */;
@@ -307,6 +313,7 @@
 				DEC67D84299BE8DD0066FC44 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				DEC67D8B299BE8F00066FC44 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				DEC67D8E299BE9160066FC44 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DE1CA11829A4D78F0088980E /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = DEC67D48299BDD900066FC44 /* Products */;
 			projectDirPath = "";
@@ -324,8 +331,9 @@
 			files = (
 				DE74899B29A299280092DD9E /* MovieCollectionViewCell.xib in Resources */,
 				DE79382E29A3D8F300CAB63C /* Main.storyboard in Resources */,
-				DEC67D57299BDD920066FC44 /* LaunchScreen.storyboard in Resources */,
 				DEC67D54299BDD920066FC44 /* Assets.xcassets in Resources */,
+				DE1CA11729A4D65D0088980E /* film.json in Resources */,
+				DE1CA11529A4D55B0088980E /* LaunchScreen.storyboard in Resources */,
 				DE74897C29A291CC0092DD9E /* MovieCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,17 +370,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DEC67D55299BDD920066FC44 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DEC67D56299BDD920066FC44 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DEC67D59299BDD920066FC44 /* Debug */ = {
@@ -500,7 +497,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoviePlay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -528,7 +525,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoviePlay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -569,6 +566,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DE1CA11829A4D78F0088980E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		DEC67D84299BE8DD0066FC44 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -596,6 +601,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DE1CA11929A4D78F0088980E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE1CA11829A4D78F0088980E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		DEC67D85299BE8DD0066FC44 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DEC67D84299BE8DD0066FC44 /* XCRemoteSwiftPackageReference "RxSwift" */;
