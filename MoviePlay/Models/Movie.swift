@@ -40,7 +40,7 @@ public struct Movie: Codable {
     public var voteAveragePercentText: String {
         return "\(Int(voteAverage * 10))%"
     }
-    
+
 }
 
 public struct MovieGenre: Codable {

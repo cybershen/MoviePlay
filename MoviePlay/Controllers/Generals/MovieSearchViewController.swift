@@ -75,7 +75,6 @@ class MovieSearchViewController: UIViewController {
 }
 
 extension MovieSearchViewController: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieSearchViewViewModel.numberOfMovies
     }
@@ -87,5 +86,4 @@ extension MovieSearchViewController: UITableViewDataSource, UITableViewDelegate 
         }
         return cell
     }
-        
 }

@@ -14,6 +14,7 @@ struct MovieViewViewModel {
     private static let dateFormatter: DateFormatter = {
         $0.dateStyle = .medium
         $0.timeStyle = .none
+        $0.locale = Locale(identifier: "en_US_POSIX")
         return $0
     }(DateFormatter())
     
@@ -24,6 +25,10 @@ struct MovieViewViewModel {
     
     var title: String {
         return movie.title
+    }
+    
+    var video: String {
+        return movie.videos?.results.description ?? ""
     }
     
     var overview: String {

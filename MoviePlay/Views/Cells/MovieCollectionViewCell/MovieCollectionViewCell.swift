@@ -25,5 +25,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         gradient.frame = cellView.bounds
         gradient.alpha = 0.2
         cellView.addSubview(gradient)
+        
+        cellView.layer.cornerRadius = self.frame.height / 11.0
+        cellView.layer.masksToBounds = true
     }
 }

@@ -20,6 +20,7 @@ public class MovieStore: MovieService {
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-mm-dd"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
         return jsonDecoder
     }()
@@ -158,8 +159,6 @@ public class MovieStore: MovieService {
             }.resume()
         
     }
-    
-
     
     private func handleError(errorHandler: @escaping(_ error: Error) -> Void, error: Error) {
         DispatchQueue.main.async {

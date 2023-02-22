@@ -10,7 +10,6 @@ import RxCocoa
 import RxSwift
 
 class MovieListViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var infoLabel: UILabel!
@@ -52,7 +51,6 @@ class MovieListViewController: UIViewController {
 }
 
 extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieListViewViewModel.numberOfMovies
     }

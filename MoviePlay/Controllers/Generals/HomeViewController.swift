@@ -9,25 +9,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-enum Sections: Int {
-    case trendingMovies = 0
-    case trendingTv = 1
-}
-
 class HomeViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    let sectionTitles = ["Home", "Trending TV"]
     
     var movieListViewViewModel: MovieListViewViewModel!
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(CollectionTableViewCell.self, forCellReuseIdentifier: CollectionTableViewCell.identifier)
+        setupCollectionView()
         
         movieListViewViewModel = MovieListViewViewModel(endpoint: segmentedControl.rx.selectedSegmentIndex
             .map { Endpoint(index: $0) ?? .upcoming }
@@ -35,63 +27,59 @@ class HomeViewController: UIViewController {
             , movieService: MovieStore.shared)
         
         movieListViewViewModel.movies.drive(onNext: {[unowned self] (_) in
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }).disposed(by: disposeBag)
         
         movieListViewViewModel.isFetching.drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
     }
+    
+    private func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 210, height: 315)
+        layout.scrollDirection = .vertical
+        collectionView.collectionViewLayout = layout
+        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+        collectionView.backgroundColor = .black
+    }
+    
+    public func configure(with viewModel: MovieListViewViewModel) {
+        self.movieListViewViewModel = viewModel
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {
-            return UITableViewCell()
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        movieListViewViewModel.numberOfMovies
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as? MovieCollectionViewCell else {
+            return UICollectionViewCell()
         }
         
-        switch indexPath.section {
-            
-        case Sections.trendingMovies.rawValue:
-            cell.configure(with: movieListViewViewModel)
-            
-        default:
-            return UITableViewCell()
+        guard let movie = movieListViewViewModel.viewModelForMovie(at: indexPath.row) else {
+            return UICollectionViewCell()
         }
+        
+        cell.configure(viewModel: movie)
         
         return cell
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 600
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.font = .systemFont(ofSize: 36, weight: .semibold)
-        header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20 , y: header.bounds.origin.y, width: 300, height: header.bounds.height)
-        header.textLabel?.textColor = .orange
-        header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let defaultOffset = view.safeAreaInsets.top
-        let offset = scrollView.contentOffset.y + defaultOffset
-        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let movie = movieListViewViewModel.viewModelForMovie(at: indexPath.row)
+        
+        print(movie)
+        
+        DispatchQueue.main.async { [weak self] in
+            let vc = DetailViewController()
+            vc.str = movie!.title
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

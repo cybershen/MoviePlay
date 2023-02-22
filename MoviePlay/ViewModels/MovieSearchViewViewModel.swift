@@ -21,41 +21,41 @@ class MovieSearchViewViewModel {
             .drive(onNext: { [weak self] (queryString) in
                 self?.searchMovie(query: queryString)
                 if queryString.isEmpty {
-                    self?._movies.accept([])
-                    self?._info.accept("Start searching your favorite movies")
+                    self?.films.accept([])
+                    self?.movieInfo.accept("Start searching your favorite movies")
                 }
             }).disposed(by: disposeBag)
     }
     
-    private let _movies = BehaviorRelay<[Movie]>(value: [])
-    private let _isFetching = BehaviorRelay<Bool>(value: false)
-    private let _info = BehaviorRelay<String?>(value: nil)
+    private let films = BehaviorRelay<[Movie]>(value: [])
+    private let isFetchingMovies = BehaviorRelay<Bool>(value: false)
+    private let movieInfo = BehaviorRelay<String?>(value: nil)
     
     var isFetching: Driver<Bool> {
-        return _isFetching.asDriver()
+        return isFetchingMovies.asDriver()
     }
     
     var movies: Driver<[Movie]> {
-        return _movies.asDriver()
+        return films.asDriver()
     }
     
     var info: Driver<String?> {
-        return _info.asDriver()
+        return movieInfo.asDriver()
     }
     
     var hasInfo: Bool {
-        return _info.value != nil
+        return movieInfo.value != nil
     }
     
     var numberOfMovies: Int {
-        return _movies.value.count
+        return films.value.count
     }
     
     func viewModelForMovie(at index: Int) -> MovieViewViewModel? {
-        guard index < _movies.value.count else {
+        guard index < films.value.count else {
             return nil
         }
-        return MovieViewViewModel(movie: _movies.value[index])
+        return MovieViewViewModel(movie: films.value[index])
     }
     
     private func searchMovie(query: String?) {
@@ -63,20 +63,20 @@ class MovieSearchViewViewModel {
             return
         }
         
-        self._movies.accept([])
-        self._isFetching.accept(true)
-        self._info.accept(nil)
+        self.films.accept([])
+        self.isFetchingMovies.accept(true)
+        self.movieInfo.accept(nil)
         
         movieService.searchMovie(query: query, params: nil, successHandler: {[weak self] (response) in
             
-            self?._isFetching.accept(false)
+            self?.isFetchingMovies.accept(false)
             if response.totalResults == 0 {
-                self?._info.accept("No result for \(query)")
+                self?.movieInfo.accept("No result for \(query)")
             }
-            self?._movies.accept(Array(response.results.prefix(5)))
+            self?.films.accept(Array(response.results.prefix(5)))
         }) { [weak self] (error) in
-            self?._isFetching.accept(false)
-            self?._info.accept(error.localizedDescription)
+            self?.isFetchingMovies.accept(false)
+            self?.movieInfo.accept(error.localizedDescription)
         }
     }
 }
