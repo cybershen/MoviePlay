@@ -73,7 +73,7 @@ class MovieSearchViewViewModel {
             if response.totalResults == 0 {
                 self?.movieInfo.accept("No result for \(query)")
             }
-            self?.films.accept(Array(response.results.prefix(5)))
+            self?.films.accept(Array(response.results.prefix(25)))
         }) { [weak self] (error) in
             self?.isFetchingMovies.accept(false)
             self?.movieInfo.accept(error.localizedDescription)

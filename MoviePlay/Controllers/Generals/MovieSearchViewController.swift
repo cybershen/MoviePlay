@@ -11,7 +11,7 @@ import RxSwift
 
 class MovieSearchViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
 
@@ -22,12 +22,13 @@ class MovieSearchViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
+        
         let searchBar = self.navigationItem.searchController!.searchBar
         
         movieSearchViewViewModel = MovieSearchViewViewModel(query: searchBar.rx.text.orEmpty.asDriver(), movieService: MovieStore.shared)
         
         movieSearchViewViewModel.movies.drive(onNext: {[unowned self] (_) in
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }).disposed(by: disposeBag)
         
         movieSearchViewViewModel.isFetching.drive(activityIndicatorView.rx.isAnimating)
@@ -42,6 +43,7 @@ class MovieSearchViewController: UIViewController {
             .asDriver(onErrorJustReturn: ())
             .drive(onNext: { [unowned searchBar] in
                 searchBar.resignFirstResponder()
+                self.collectionView.reloadData()
             }).disposed(by: disposeBag)
         
         searchBar.rx.cancelButtonClicked
@@ -49,8 +51,9 @@ class MovieSearchViewController: UIViewController {
             .drive(onNext: { [unowned searchBar] in
                 searchBar.resignFirstResponder()
             }).disposed(by: disposeBag)
+        
+        setupCollectionView()
 
-        setupTableView()
     }
     
     private func setupNavigationBar() {
@@ -63,27 +66,30 @@ class MovieSearchViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    private func setupTableView() {
-        tableView.tableFooterView = UIView()
-        tableView.tableFooterView?.backgroundColor = .black
-        tableView.tableFooterView?.tintColor = .black
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
-        tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
+    private func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 137, height: 203)
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
+        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+        collectionView.backgroundColor = .black
     }
     
 }
 
-extension MovieSearchViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MovieSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieSearchViewViewModel.numberOfMovies
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
+        
         if let viewModel = movieSearchViewViewModel.viewModelForMovie(at: indexPath.row) {
             cell.configure(viewModel: viewModel)
         }
+        
         return cell
     }
 }

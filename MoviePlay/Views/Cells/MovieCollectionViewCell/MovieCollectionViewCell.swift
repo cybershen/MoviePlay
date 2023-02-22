@@ -28,5 +28,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         cellView.layer.cornerRadius = self.frame.height / 11.0
         cellView.layer.masksToBounds = true
+        
+        imageView.contentMode = .scaleToFill
     }
 }

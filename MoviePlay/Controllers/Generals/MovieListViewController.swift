@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 
 class MovieListViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var infoLabel: UILabel!
@@ -42,8 +43,6 @@ class MovieListViewController: UIViewController {
     }
 
     private func setupTableView() {
-        tableView.tableFooterView = UIView()
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
     }

@@ -61,7 +61,7 @@ class MovieListViewViewModel {
         
         movieService.fetchMovies(from: endpoint, params: nil, successHandler: {[weak self] (response) in
             self?.isFetchingMovies.accept(false)
-            self?.films.accept(response.results)
+            self?.films.accept(Array(response.results.prefix(25)))
             
         }) { [weak self] (error) in
             self?.isFetchingMovies.accept(false)
