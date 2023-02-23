@@ -11,12 +11,18 @@ import RxSwift
 
 class MovieSearchViewController: UIViewController {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    //MARK: - Variables
 
     var movieSearchViewViewModel: MovieSearchViewViewModel!
     let disposeBag = DisposeBag()
+    
+    //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

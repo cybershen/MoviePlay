@@ -9,13 +9,26 @@ import UIKit
 import SDWebImage
 
 class MovieCell: UITableViewCell {
+    
+    //MARK: - Outlets
+    
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var cellView: UIView!
     
+    //MARK: - Constants
+    
     let gradient = GradientView()
+    
+    //MARK: - Lifecycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+    //MARK: - Private Methods
     
     func configure(viewModel: MovieViewViewModel) {
         titleLabel.text = viewModel.title
@@ -24,8 +37,7 @@ class MovieCell: UITableViewCell {
         posterImageView.sd_setImage(with: viewModel.posterURL)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    private func configure() {
         gradient.frame = cellView.bounds
         gradient.alpha = 0.2
         cellView.addSubview(gradient)

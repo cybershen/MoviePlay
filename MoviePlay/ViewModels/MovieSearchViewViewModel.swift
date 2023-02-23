@@ -10,8 +10,13 @@ import RxSwift
 import RxCocoa
 
 class MovieSearchViewViewModel {
+    
+    //MARK: - Constants
+    
     private let movieService: APIService
     private let disposeBag = DisposeBag()
+    
+    //MARK: - Constructors
     
     init(query: Driver<String>, movieService: APIService) {
         self.movieService = movieService
@@ -25,6 +30,8 @@ class MovieSearchViewViewModel {
                 }
             }).disposed(by: disposeBag)
     }
+    
+    //MARK: - Variables
     
     private let films = BehaviorRelay<[Movie]>(value: [])
     private let isFetchingMovies = BehaviorRelay<Bool>(value: false)
@@ -56,6 +63,8 @@ class MovieSearchViewViewModel {
         }
         return MovieViewViewModel(movie: films.value[index])
     }
+    
+    //MARK: - Private Methods
     
     private func searchMovie(query: String?) {
         guard let query = query, !query.isEmpty else {

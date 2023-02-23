@@ -10,8 +10,13 @@ import RxSwift
 import RxCocoa
 
 class MovieListViewViewModel {
+    
+    //MARK: - Constants
+    
     private let movieService: APIService
     private let disposeBag = DisposeBag()
+    
+    //MARK: - Constructors
     
     init(endpoint: Driver<Endpoint>, movieService: APIService) {
         self.movieService = movieService
@@ -21,6 +26,8 @@ class MovieListViewViewModel {
                 self?.fetchMovies(endpoint: endpoint)
         }).disposed(by: disposeBag)
     }
+    
+    //MARK: - Variables
     
     private let films = BehaviorRelay<[Movie]>(value: [])
     private let isFetchingMovies = BehaviorRelay<Bool>(value: false)
@@ -52,6 +59,8 @@ class MovieListViewViewModel {
         }
         return MovieViewViewModel(movie: films.value[index])
     }
+    
+    //MARK: - Private Methods
     
     private func fetchMovies(endpoint: Endpoint) {
         self.films.accept([])

@@ -10,9 +10,15 @@ import Lottie
 
 class LoginViewController: UIViewController {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var viewForAnimation: UIView!
     
+    //MARK: - Variables
+    
     private var animationView: LottieAnimationView!
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,8 @@ class LoginViewController: UIViewController {
         viewForAnimation.addSubview(animationView)
         animationView.play()
     }
+    
+    //MARK: - Actions
     
     @IBAction func registerTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

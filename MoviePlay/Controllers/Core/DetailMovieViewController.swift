@@ -11,14 +11,21 @@ import SDWebImage
 
 class DetailMovieViewController: UIViewController {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var viewForAnimation: UIView!
     @IBOutlet weak var nameLabel: GradientLabel!
     @IBOutlet weak var descriptionLabel: GradientLabel!
     @IBOutlet weak var releaseLabel: GradientLabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    //MARK: - Variables
+    
     var myModel: MovieViewViewModel!
+    
     private var animationView: LottieAnimationView!
+    
+    //MARK: - Lifecycle
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +34,8 @@ class DetailMovieViewController: UIViewController {
         blurImage()
         setupAnimationView()
     }
+    
+    //MARK: - Methods
     
     func configure(viewModel: MovieViewViewModel) {
         configureLabel(with: nameLabel, and: viewModel.title)

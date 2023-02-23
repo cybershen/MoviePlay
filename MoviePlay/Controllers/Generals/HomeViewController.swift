@@ -11,12 +11,18 @@ import RxCocoa
 
 class HomeViewController: UIViewController {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    //MARK: - Variables
+    
     var movieListViewViewModel: MovieListViewViewModel!
     let disposeBag = DisposeBag()
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

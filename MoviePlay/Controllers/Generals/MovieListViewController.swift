@@ -11,13 +11,19 @@ import RxCocoa
 
 class MovieListViewController: UIViewController {
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    //MARK: - Variables
+    
     var movieListViewViewModel: MovieListViewViewModel!
     let disposeBag = DisposeBag()
+    
+    //MARK: - Lifecycle
  
     override func viewDidLoad() {
         super.viewDidLoad()

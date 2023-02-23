@@ -8,10 +8,14 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    //MARK: - Actions
     
     @IBAction func registerTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

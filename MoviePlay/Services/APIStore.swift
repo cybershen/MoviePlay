@@ -9,6 +9,8 @@ import Foundation
 
 public class APIStore: APIService {
     
+    //MARK: - Constants
+    
     public static let shared = APIStore()
     private init() {}
     private let apiKey = "aa93e479f5732d36824792077dd519b4"

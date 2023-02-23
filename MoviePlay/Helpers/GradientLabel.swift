@@ -8,7 +8,12 @@
 import UIKit
 
 class GradientLabel: UILabel {
+    
+    //MARK: - Variables
+    
     var gradientColors: [CGColor] = []
+    
+    //MARK: - Methods
 
     override func drawText(in rect: CGRect) {
         if let gradientColor = drawGradientColor(in: rect, colors: gradientColors) {
