@@ -48,7 +48,7 @@ struct MovieViewViewModel {
     var rating: String {
         let rating = Int(movie.voteAverage)
         let ratingText = (0..<rating).reduce("") { (acc, _) -> String in
-            return acc + "☆"
+            return acc + "⭐"
         }
         return ratingText
     }
