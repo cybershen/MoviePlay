@@ -9,6 +9,7 @@ import UIKit
 import Lottie
 
 class LoginViewController: UIViewController {
+    
     @IBOutlet weak var viewForAnimation: UIView!
     
     private var animationView: LottieAnimationView!
@@ -18,6 +19,8 @@ class LoginViewController: UIViewController {
         setupAnimationView()
     }
     
+    //MARK: - Private Methods
+    
     private func setupAnimationView() {
         animationView = .init(name: "film")
         animationView.frame = viewForAnimation.bounds
@@ -26,6 +29,13 @@ class LoginViewController: UIViewController {
         animationView.animationSpeed = 1.0
         viewForAnimation.addSubview(animationView)
         animationView.play()
+    }
+    
+    @IBAction func registerTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        profileVC.modalPresentationStyle = .fullScreen
+        present(profileVC, animated: true)
     }
     
     @IBAction func loginTapped(_ sender: Any) {

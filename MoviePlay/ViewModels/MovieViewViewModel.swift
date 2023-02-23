@@ -8,7 +8,6 @@
 import Foundation
 
 struct MovieViewViewModel {
-    
     private var movie: Movie
     
     private static let dateFormatter: DateFormatter = {

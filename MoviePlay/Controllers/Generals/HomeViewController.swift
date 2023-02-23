@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 
 class HomeViewController: UIViewController {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -24,15 +25,18 @@ class HomeViewController: UIViewController {
         movieListViewViewModel = MovieListViewViewModel(endpoint: segmentedControl.rx.selectedSegmentIndex
             .map { Endpoint(index: $0) ?? .upcoming }
             .asDriver(onErrorJustReturn: .upcoming)
-            , movieService: MovieStore.shared)
+            ,movieService: APIStore.shared)
         
         movieListViewViewModel.movies.drive(onNext: {[unowned self] (_) in
             self.collectionView.reloadData()
-        }).disposed(by: disposeBag)
+        })
+        .disposed(by: disposeBag)
         
         movieListViewViewModel.isFetching.drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
     }
+    
+    //MARK: - Private Methods
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -43,13 +47,15 @@ class HomeViewController: UIViewController {
         collectionView.backgroundColor = .black
     }
     
-    public func configure(with viewModel: MovieListViewViewModel) {
+    private func configure(with viewModel: MovieListViewViewModel) {
         self.movieListViewViewModel = viewModel
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
     }
 }
+
+//MARK: - UICollectionView Delegate
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,16 +76,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let movie = movieListViewViewModel.viewModelForMovie(at: indexPath.row)
         
-        print(movie)
-        
-        DispatchQueue.main.async { [weak self] in
-            let vc = DetailViewController()
-            vc.str = movie!.title
-            self?.navigationController?.pushViewController(vc, animated: true)
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailMovieViewController") as? DetailMovieViewController {
+            
+            DispatchQueue.main.async { [weak self] in
+                vc.myModel = movie
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

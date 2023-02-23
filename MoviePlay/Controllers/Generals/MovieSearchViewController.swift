@@ -20,12 +20,11 @@ class MovieSearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupNavigationBar()
         
         let searchBar = self.navigationItem.searchController!.searchBar
         
-        movieSearchViewViewModel = MovieSearchViewViewModel(query: searchBar.rx.text.orEmpty.asDriver(), movieService: MovieStore.shared)
+        movieSearchViewViewModel = MovieSearchViewViewModel(query: searchBar.rx.text.orEmpty.asDriver(), movieService: APIStore.shared)
         
         movieSearchViewViewModel.movies.drive(onNext: {[unowned self] (_) in
             self.collectionView.reloadData()
@@ -53,8 +52,9 @@ class MovieSearchViewController: UIViewController {
             }).disposed(by: disposeBag)
         
         setupCollectionView()
-
     }
+    
+    //MARK: - Private Methods
     
     private func setupNavigationBar() {
         navigationItem.searchController = UISearchController(searchResultsController: nil)
@@ -64,6 +64,7 @@ class MovieSearchViewController: UIViewController {
         navigationItem.searchController?.searchBar.sizeToFit()
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .systemOrange
     }
     
     private func setupCollectionView() {
@@ -74,8 +75,9 @@ class MovieSearchViewController: UIViewController {
         collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
         collectionView.backgroundColor = .black
     }
-    
 }
+
+//MARK: UICollectionView Delegate
 
 extension MovieSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -91,5 +93,17 @@ extension MovieSearchViewController: UICollectionViewDelegate, UICollectionViewD
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = movieSearchViewViewModel.viewModelForMovie(at: indexPath.row)
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailMovieViewController") as? DetailMovieViewController {
+            
+            DispatchQueue.main.async { [weak self] in
+                vc.myModel = movie
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var cellView: UIView!
     
-    let gradient = DiagonalGradient()
+    let gradient = GradientView()
     
     func configure(viewModel: MovieViewViewModel) {
         titleLabel.text = viewModel.title

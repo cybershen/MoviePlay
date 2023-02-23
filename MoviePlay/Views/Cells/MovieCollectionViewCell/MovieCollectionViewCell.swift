@@ -12,7 +12,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cellView: UIView!
     
-    let gradient = DiagonalGradient()
+    let gradient = GradientView()
     
     static let identifier = "MovieCollectionViewCell"
     

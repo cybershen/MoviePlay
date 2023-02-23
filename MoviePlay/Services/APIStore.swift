@@ -7,9 +7,9 @@
 
 import Foundation
 
-public class MovieStore: MovieService {
+public class APIStore: APIService {
     
-    public static let shared = MovieStore()
+    public static let shared = APIStore()
     private init() {}
     private let apiKey = "aa93e479f5732d36824792077dd519b4"
     private let baseAPIURL = "https://api.themoviedb.org/3"
@@ -25,6 +25,7 @@ public class MovieStore: MovieService {
         return jsonDecoder
     }()
     
+    //MARK: - Methods
     
     public func fetchMovies(from endpoint: Endpoint, params: [String: String]? = nil, successHandler: @escaping (_ response: MoviesResponse) -> Void, errorHandler: @escaping(_ error: Error) -> Void) {
         
@@ -87,7 +88,7 @@ public class MovieStore: MovieService {
             
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 self.handleError(errorHandler: errorHandler, error: MovieError.invalidResponse)
-
+                
                 return
             }
             
@@ -105,11 +106,10 @@ public class MovieStore: MovieService {
                 self.handleError(errorHandler: errorHandler, error: MovieError.serializationError)
             }
         }.resume()
-    
+        
     }
     
-    func searchMovie(query: String, params: [String : String]?, successHandler: @escaping (MoviesResponse) -> Void, errorHandler: @escaping (Error) -> Void) {
-        
+    public func searchMovie(query: String, params: [String : String]?, successHandler: @escaping (MoviesResponse) -> Void, errorHandler: @escaping (Error) -> Void) {
         guard var urlComponents = URLComponents(string: "\(baseAPIURL)/search/movie") else {
             errorHandler(MovieError.invalidEndpoint)
             return
@@ -120,7 +120,7 @@ public class MovieStore: MovieService {
                           URLQueryItem(name: "include_adult", value: "false"),
                           URLQueryItem(name: "region", value: "US"),
                           URLQueryItem(name: "query", value: query)
-                          ]
+        ]
         if let params = params {
             queryItems.append(contentsOf: params.map { URLQueryItem(name: $0.key, value: $0.value) })
         }
@@ -156,8 +156,7 @@ public class MovieStore: MovieService {
             } catch {
                 self.handleError(errorHandler: errorHandler, error: MovieError.serializationError)
             }
-            }.resume()
-        
+        }.resume()
     }
     
     private func handleError(errorHandler: @escaping(_ error: Error) -> Void, error: Error) {
@@ -165,5 +164,4 @@ public class MovieStore: MovieService {
             errorHandler(error)
         }
     }
-    
 }

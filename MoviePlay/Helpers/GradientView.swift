@@ -7,8 +7,7 @@
 
 import UIKit
 
-class DiagonalGradient: UIView {
-
+class GradientView: UIView {
     let gradient = CAGradientLayer()
 
     override init(frame: CGRect) {

@@ -10,11 +10,10 @@ import RxSwift
 import RxCocoa
 
 class MovieSearchViewViewModel {
-    
-    private let movieService: MovieService
+    private let movieService: APIService
     private let disposeBag = DisposeBag()
     
-    init(query: Driver<String>, movieService: MovieService) {
+    init(query: Driver<String>, movieService: APIService) {
         self.movieService = movieService
         query
             .distinctUntilChanged()

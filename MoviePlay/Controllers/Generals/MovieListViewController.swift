@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import RxCocoa
 import RxSwift
+import RxCocoa
 
 class MovieListViewController: UIViewController {
     
@@ -25,11 +25,12 @@ class MovieListViewController: UIViewController {
         movieListViewViewModel = MovieListViewViewModel(endpoint: segmentedControl.rx.selectedSegmentIndex
             .map { Endpoint(index: $0) ?? .nowPlaying }
             .asDriver(onErrorJustReturn: .nowPlaying)
-            , movieService: MovieStore.shared)
+            , movieService: APIStore.shared)
         
         movieListViewViewModel.movies.drive(onNext: {[unowned self] (_) in
             self.tableView.reloadData()
-        }).disposed(by: disposeBag)
+        })
+        .disposed(by: disposeBag)
         
         movieListViewViewModel.isFetching.drive(activityIndicatorView.rx.isAnimating)
             .disposed(by: disposeBag)
@@ -37,17 +38,21 @@ class MovieListViewController: UIViewController {
         movieListViewViewModel.error.drive(onNext: {[unowned self] (error) in
             self.infoLabel.isHidden = !self.movieListViewViewModel.hasError
             self.infoLabel.text = error
-        }).disposed(by: disposeBag)
+        })
+        .disposed(by: disposeBag)
         
         setupTableView()
     }
+    
+    //MARK: - Private Methods
 
     private func setupTableView() {
         tableView.estimatedRowHeight = 100
         tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
     }
-    
 }
+
+//MARK: - UITableView Delegate
 
 extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,5 +65,17 @@ extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configure(viewModel: viewModel)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = movieListViewViewModel.viewModelForMovie(at: indexPath.row)
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailMovieViewController") as? DetailMovieViewController {
+            
+            DispatchQueue.main.async { [weak self] in
+                vc.myModel = movie
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }

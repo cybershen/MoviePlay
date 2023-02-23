@@ -10,11 +10,10 @@ import RxSwift
 import RxCocoa
 
 class MovieListViewViewModel {
-    
-    private let movieService: MovieService
+    private let movieService: APIService
     private let disposeBag = DisposeBag()
     
-    init(endpoint: Driver<Endpoint>, movieService: MovieService) {
+    init(endpoint: Driver<Endpoint>, movieService: APIService) {
         self.movieService = movieService
         endpoint
             .drive(onNext: { [weak self] (endpoint) in
