@@ -26,6 +26,7 @@ class MovieCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        configureUI()
     }
     
     //MARK: - Private Methods
@@ -37,7 +38,7 @@ class MovieCell: UITableViewCell {
         posterImageView.sd_setImage(with: viewModel.posterURL)
     }
     
-    private func configure() {
+    private func configureUI() {
         gradient.frame = cellView.bounds
         gradient.alpha = 0.2
         cellView.addSubview(gradient)

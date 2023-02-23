@@ -52,5 +52,4 @@ struct MovieViewViewModel {
         }
         return ratingText
     }
-    
 }
