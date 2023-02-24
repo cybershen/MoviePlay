@@ -29,10 +29,6 @@ struct MovieViewViewModel {
         return movie.title
     }
     
-    var video: String {
-        return movie.videos?.results.description ?? ""
-    }
-    
     var overview: String {
         return movie.overview
     }
