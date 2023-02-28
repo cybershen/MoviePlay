@@ -1,6 +1,5 @@
 # MoviePlay
 
-## Description 
 · App that fetches data from themoviedb API, decodes it, and represents it in an aesthetically pleasing UI. It allows the users to view list of movies and read the description for the chosen one.
 
 · It has features such as animations on the main screen and detail screen, choosing the current film through collection, searching a movie by name.
