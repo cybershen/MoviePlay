@@ -15,7 +15,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cellView: UIView!
     
-    //MARK: - Constants
+    //MARK: - Properties
     
     let gradient = GradientView()
     

@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    //MARK: - Variables
+    //MARK: - Properties
     
     var movieListViewViewModel: MovieListViewViewModel!
     let disposeBag = DisposeBag()
@@ -49,7 +49,7 @@ class HomeViewController: UIViewController {
         layout.itemSize = CGSize(width: 210, height: 315)
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
-        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+        collectionView.register(UINib(nibName: MovieCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         collectionView.backgroundColor = .black
     }
     
@@ -69,7 +69,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as? MovieCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
         

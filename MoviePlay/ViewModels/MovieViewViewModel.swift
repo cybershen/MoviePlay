@@ -9,7 +9,7 @@ import Foundation
 
 struct MovieViewViewModel {
     
-    //MARK: - Variables
+    //MARK: - Properties
     
     private var movie: Movie
     

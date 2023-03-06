@@ -18,7 +18,9 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var cellView: UIView!
     
-    //MARK: - Constants
+    //MARK: - Properties
+    
+    static let identifier = "MovieCell"
     
     let gradient = GradientView()
     

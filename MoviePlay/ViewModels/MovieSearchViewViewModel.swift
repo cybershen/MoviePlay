@@ -11,7 +11,7 @@ import RxCocoa
 
 class MovieSearchViewViewModel {
     
-    //MARK: - Constants
+    //MARK: - Properties
     
     private let movieService: APIService
     private let disposeBag = DisposeBag()

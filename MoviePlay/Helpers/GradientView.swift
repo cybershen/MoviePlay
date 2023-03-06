@@ -9,17 +9,17 @@ import UIKit
 
 class GradientView: UIView {
     
-    //MARK: - Constants
+    //MARK: - Properties
     
     let gradient = CAGradientLayer()
+    
+    //MARK: - Constructors
 
     override init(frame: CGRect) {
         super.init(frame:frame)
         setupGradient(color: UIColor.orange)
         
     }
-    
-    //MARK: - Constructors
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

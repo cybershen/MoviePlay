@@ -17,7 +17,7 @@ class MovieSearchViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    //MARK: - Variables
+    //MARK: - Properties
 
     var movieSearchViewViewModel: MovieSearchViewViewModel!
     let disposeBag = DisposeBag()
@@ -78,7 +78,7 @@ class MovieSearchViewController: UIViewController {
         layout.itemSize = CGSize(width: 137, height: 203)
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
-        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+        collectionView.register(UINib(nibName: MovieCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         collectionView.backgroundColor = .black
     }
 }

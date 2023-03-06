@@ -11,7 +11,7 @@ import RxCocoa
 
 class MovieListViewViewModel {
     
-    //MARK: - Constants
+    //MARK: - Properties
     
     private let movieService: APIService
     private let disposeBag = DisposeBag()
@@ -27,7 +27,7 @@ class MovieListViewViewModel {
         }).disposed(by: disposeBag)
     }
     
-    //MARK: - Variables
+    //MARK: - Private Properties
     
     private let films = BehaviorRelay<[Movie]>(value: [])
     private let isFetchingMovies = BehaviorRelay<Bool>(value: false)

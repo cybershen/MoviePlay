@@ -18,7 +18,7 @@ class MovieListViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    //MARK: - Variables
+    //MARK: - Properties
     
     var movieListViewViewModel: MovieListViewViewModel!
     let disposeBag = DisposeBag()
@@ -54,7 +54,7 @@ class MovieListViewController: UIViewController {
 
     private func setupTableView() {
         tableView.estimatedRowHeight = 100
-        tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
+        tableView.register(UINib(nibName: MovieCell.identifier, bundle: nil), forCellReuseIdentifier: MovieCell.identifier)
     }
 }
 
@@ -66,7 +66,7 @@ extension MovieListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.identifier, for: indexPath) as! MovieCell
         if let viewModel = movieListViewViewModel.viewModelForMovie(at: indexPath.row) {
             cell.configure(viewModel: viewModel)
         }

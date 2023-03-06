@@ -102,13 +102,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		DE74898929A292E20092DD9E /* Services */ = {
+		DE74898929A292E20092DD9E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				DE74898A29A292F60092DD9E /* APIStore.swift */,
 				DE74898C29A293000092DD9E /* APIService.swift */,
 			);
-			path = Services;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		DE74899429A2983F0092DD9E /* MovieCell */ = {
@@ -148,7 +148,7 @@
 		DEC67D49299BDD900066FC44 /* MoviePlay */ = {
 			isa = PBXGroup;
 			children = (
-				DE74898929A292E20092DD9E /* Services */,
+				DE74898929A292E20092DD9E /* Managers */,
 				DEC67D7F299BE6D50066FC44 /* Helpers */,
 				DEC67D64299BDE470066FC44 /* Resources */,
 				DEC67D63299BDE410066FC44 /* Extensions */,
@@ -194,7 +194,7 @@
 		DEC67D61299BDE200066FC44 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DEC67D66299BE4A50066FC44 /* Generals */,
+				DEC67D66299BE4A50066FC44 /* General */,
 				DEC67D65299BE49D0066FC44 /* Core */,
 			);
 			path = Controllers;
@@ -227,7 +227,7 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		DEC67D66299BE4A50066FC44 /* Generals */ = {
+		DEC67D66299BE4A50066FC44 /* General */ = {
 			isa = PBXGroup;
 			children = (
 				DE74897429A2907A0092DD9E /* MainTabBarController.swift */,
@@ -236,7 +236,7 @@
 				DE74898729A292D10092DD9E /* MovieSearchViewController.swift */,
 				DEDE201A29A39CC1001FBCF2 /* ProfileViewController.swift */,
 			);
-			path = Generals;
+			path = General;
 			sourceTree = "<group>";
 		};
 		DEC67D7F299BE6D50066FC44 /* Helpers */ = {
